@@ -18,6 +18,7 @@
 
   .cards {
     margin-top: -72px;
+    padding-right: 0px;
     display: flex;
     justify-content: right;
   }
@@ -34,7 +35,7 @@
       padding-left: 50px;
     }
     .cards {
-      margin-top: 45px;
+      margin-top: 40px;
       display: flex;
     }
   }
