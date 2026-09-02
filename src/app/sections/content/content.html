@@ -116,8 +116,10 @@
                 style="min-width: 100% !important"
               >
                 <option selected value="">[ What week are you interested in? ]</option>
-                <option value="No">No</option>
-                <option value="Yes">Yes</option>
+                <option value="September 14">Week of September 14</option>
+                <option value="September 28">Week of September 28</option>
+                <option value="October 12">Week of October 12</option>
+                <option value="October 26">Week of October 26</option>
               </select>
               @if ((weekSelect.touched || userForm.submitted) && weekSelect.invalid) {
                 <div class="error-message">Please select what week you are interested in.</div>
