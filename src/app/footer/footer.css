@@ -1,0 +1,33 @@
+  /* site specific */
+  .bottombanner-container {
+    width: 100%;
+    height: 150px;
+    background-image: url('/images/footerbanner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bottombanner {
+    padding-top: 120px;
+  }
+
+  .chips {
+    margin-top: -83px;
+    display: flex;
+    justify-content: left;
+    padding-left: 100px;
+  }
+
+  /* Mobile Styles */
+  @media screen and (max-width: 768px) {
+    .bottombanner-container {
+      height: 80px;
+    }
+
+    .chips {
+      margin-top: -25px;
+      display: flex;
+      padding-left: 60px;
+     }
+  }

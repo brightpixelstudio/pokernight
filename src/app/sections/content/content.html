@@ -1,0 +1,170 @@
+<div class="row">
+  <div class="content-container col-12">
+    <div class="row pt-5 pb-2">
+      <div class="col-1"></div>
+      <div class="col-11">
+        <h1>Poker Night Sign-up Form</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="content-container col-12 pb-5">
+    <div class="row pt-4 pb-5">
+      <div class="col-1"></div>
+      <div class="col-2">
+        <img src="/images/chip.png" alt="Connect" class="img-flui" />
+      </div>
+      <div class="col-8">
+        <p>
+          I am excited about hosting a semi-weekly poker night! It's been a while since I have
+          played Texas Hold'em and I am looking forward to getting back into it. I use to play quite
+          a bit and appreciate your interest!
+          <br /><br />
+          I have a dining table cover that I bought for Texas Hold'em. I have a mechanical card
+          shuffler and professional poker chips. I have a large TV and can provide music of
+          everyones choice - just connect your phone.
+          <br /><br />
+          I will provide snacks such as chips, pretzels, and peanuts. Please bring your own drinks
+          (alcoholic or non-alcoholic) and of course, please drink responsibly.
+        </p>
+        <hr />
+        <p>
+          <i>Here are some of the rules. Suggestions are welcome in the comments section below.</i>
+        </p>
+        <ul>
+          <li>
+            <p>
+              In the beginning, I will be the dealer. As I get more comfortable, I will rotate the
+              dealer position.
+            </p>
+          </li>
+          <li>
+            <p>There will be <strong>No Rake.</strong></p>
+          </li>
+          <li>
+            <p>
+              Buy-In will be $20. As we all get more confortable, this may increase if everyone
+              agrees. Re-buy in's will <strong>Not</strong> be permitted. If you lose all your
+              chips, you are out of the game.
+            </p>
+          </li>
+          <li>
+            <p>Games will be <strong>No-Limit</strong> Texas Hold'em.</p>
+          </li>
+        </ul>
+        <hr />
+        <p>
+          I am collecting the information below to understand who is interested and what date, day
+          and time works the best. Majority rules. I will email the results to each person
+          interested.
+          <br /><br />
+          After submitting the form it will open your email with the results that you entered.
+          Please submit that email and I will receive it.
+          <br /><br />
+        </p>
+        <form class="container" #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+          <input
+            style="min-width: 300px"
+            type="text"
+            id="usernamem"
+            name="username"
+            required
+            ngModel
+            #usernameInput="ngModel"
+            placeholder="Please enter your name..."
+            class="form-control"
+          />
+          @if ((usernameInput.touched || userForm.submitted) && usernameInput.invalid) {
+            <div class="error-message">Name is required.</div>
+          }
+          <input
+            style="min-width: 300px"
+            type="text"
+            id="phone"
+            name="phone"
+            required
+            ngModel
+            pattern="^[0-9]{10}$"
+            #phoneInput="ngModel"
+            placeholder="Please enter your phone number..."
+            class="form-control"
+          />
+          @if ((phoneInput.touched || userForm.submitted) && phoneInput.invalid) {
+            <div class="error-message">Phone number is required.</div>
+          }
+          @if ((phoneInput.touched || userForm.submitted) && phoneInput?.hasError('pattern')) {
+            <div class="error-message">Please enter a valid 10-digit phone number.</div>
+          }
+          <select
+            data-name="week"
+            id="week"
+            name="week"
+            required
+            ngModel
+            #weekSelect="ngModel"
+            style="min-width: 100% !important"
+          >
+            <option selected value="">[ What week are you interested in? ]</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+          @if ((weekSelect.touched || userForm.submitted) && weekSelect.invalid) {
+            <div class="error-message">Please select what week you are interested in.</div>
+          }
+          <select
+            data-name="day"
+            id="day"
+            name="day"
+            required
+            ngModel
+            #daySelect="ngModel"
+            style="min-width: 100% !important"
+          >
+            <option selected value="">[ What day are you interested in? ]</option>
+            <option value="Monday">Monday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Thursday">Thursday</option>
+          </select>
+          @if ((daySelect.touched || userForm.submitted) && daySelect.invalid) {
+            <div class="error-message">Please select a day.</div>
+          }
+          <select
+            data-name="time"
+            id="time"
+            name="time"
+            required
+            ngModel
+            #timeSelect="ngModel"
+            style="min-width: 100% !important"
+          >
+            <option selected value="">[ Please select a start time ]</option>
+            <option value="8pm">8pm</option>
+            <option value="9pm">9pm</option>
+            <option value="10pm">10pm</option>
+          </select>
+          @if ((timeSelect.touched || userForm.submitted) && timeSelect.invalid) {
+            <div class="error-message">A start time is required.</div>
+          }
+          <textarea
+            style="min-width: 300px"
+            type="text"
+            id="comments"
+            name="comments"
+            ngModel
+            #commentsInput="ngModel"
+            rows="2"
+            placeholder="Comments or suggestions?"
+            class="form-control"
+          ></textarea>
+          <br />
+          <button (click)="onSubmit(userForm)" class="submitbutton">
+            <img src="/images/button.png" alt="Submit" class="img-fluid" />
+          </button>
+        </form>
+      </div>
+      <div class="col-1"></div>
+    </div>
+  </div>
+</div>
