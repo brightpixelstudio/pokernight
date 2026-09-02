@@ -4,15 +4,18 @@
   }
 
   .content-container p {
-    font-family: 'CORBEL';
+    font-family: 'Times New Roman', Times, serif;
     color: #838383;
     font-size: 24px;
     line-height: 26px;
   }
 
-  .content-container .container {
-    padding-left: 0px;
+/*
+  .content-container{
+    background-image: url('/images/background.jpg');
+    background-repeat: repeat;
   }
+  */
   
   form{
     margin: 0px;  }
